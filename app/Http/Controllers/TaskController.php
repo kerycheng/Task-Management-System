@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller{
     public function home(){
-        return view('home');
+        $tasks = Task::all();
+
+        return view('home', compact('tasks'));
     }
 
-    public function index(){
-        $tasks = Task::all();
-        return view('tasks', compact('tasks'));
+    public function create(Request $request){
+        $users = User::all();
+
+        return view('tasks.create', compact('users'));
     }
 
     public function store(Request $request){

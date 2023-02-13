@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller{
     // 註冊頁面
     public function register(){
-        return view('register');
+        $jobs = Job::all();
+
+        return view('register', compact('jobs'));
     }
 
     // 儲存會員資料
@@ -18,6 +21,7 @@ class UserController extends Controller{
         $user->name = $request->input('name');
         $user->password = bcrypt($request->input('password'));
         $user->email = $request->input('email');
+        $user->job_unit = $request->input('job');
         $user->role = 'user';
         $user->save();
 

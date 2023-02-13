@@ -24,9 +24,6 @@ Route::get('/tasks/create', [TaskController::class, 'create']);
 // 儲存任務
 Route::post('/tasks', [TaskController::class, 'store']);
 
-// 查看任務
-Route::get('/tasks/index', [TaskController::class, 'index']);
-
 // 註冊會員
 Route::get('/register', [UserController::class, 'register']);
 

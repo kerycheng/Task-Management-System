@@ -20,6 +20,14 @@
                 <input type="email" name="email" id="email" required>
             </p>
             <p>
+                <label for="job">職位名稱：</label>
+                <select name="job" id="job">
+                    @foreach($jobs as $job)
+                        <option value="{{$job->id}}">{{$job->title}}</option>
+                    @endforeach
+                </select>
+            </p>
+            <p>
                 <label for="password">密碼: </label>
                 <input type="password" name="password" id="password" required>
             </p>
