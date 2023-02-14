@@ -21,6 +21,7 @@
         </form>
       @endif
       <a class="btn btn-success" href="/tasks/create">發佈任務</a>
+      <a class="btn btn-success" href="/users/tasks">查看個人任務</a>
     </div>
   </div>
 

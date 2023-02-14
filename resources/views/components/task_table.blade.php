@@ -10,6 +10,7 @@
             <th>執行人</th>
             <th>任務發布時間</th>
             <th>任務結束時間</th>
+            <th>任務當前狀態</th>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
             <td>{{ $task->executor }}</td>
             <td>{{ $task->start_time }}</td>
             <td>{{ $task->end_time }}</td>
+            <td>{{ $task->task_status}}</td>
             </tr>
         </tbody>
     </table>
