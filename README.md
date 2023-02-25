@@ -23,16 +23,19 @@
 <h2 id="網頁預覽">網頁預覽</h2>  
 
 * 首頁(未登入)  
-![image](https://imgur.com/SPrOujw.jpg)
+![image](https://imgur.com/oG7lFTv.jpg)
 
 * 首頁(已登入)  
-![image](https://imgur.com/4MBMORa.jpg)
+![image](https://imgur.com/GHckOq0.jpg)
 
 * 註冊頁面  
 ![image](https://imgur.com/wq1ViZG.jpg)
 
 * 發佈任務  
-![image](https://imgur.com/STLvIWH.jpg)
+![image](https://imgur.com/2gLWJH1.jpg)
+
+* 查看任務
+![image](https://imgur.com/2Wc6AFi.jpg)
 
 <h2 id="安裝說明">安裝說明</h2>
 
