@@ -29,7 +29,7 @@
 ![image](https://imgur.com/GHckOq0.jpg)
 
 * 註冊頁面  
-![image](https://imgur.com/wq1ViZG.jpg)
+![image](https://imgur.com/vzO8B87.jpg)
 
 * 發佈任務  
 ![image](https://imgur.com/2gLWJH1.jpg)
