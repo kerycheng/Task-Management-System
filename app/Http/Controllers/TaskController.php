@@ -46,6 +46,6 @@ class TaskController extends Controller{
         $task->task_status = $request->input('status');
         $task->save();
 
-        return redirect('')->with('message', '任務狀態已更新!');
+        return redirect('/')->with('message', '任務狀態已更新!');
     } 
 }
