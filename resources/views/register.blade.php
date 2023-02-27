@@ -15,27 +15,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .form-floating {
-        margin: 10px;
-      }
-    </style>
-
+    <link href="../assets/dist/css/register_login.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="../assets/dist/css/signin.css" rel="stylesheet">
@@ -45,27 +25,39 @@
 <main class="form-signin">
     <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">註冊</h1>
-    <form action="/users/authenticate" method="POST">
+    <form action="/users" method="POST">
         @csrf
         <div class="form-floating">        
-            <input type="text" class="form-control" name="name" id="name" placeholder="名稱">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="名稱" value="{{ old('name') }}">
             <label for="name">名稱</label>
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="email" placeholder="電子郵件">
+            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="電子郵件" value="{{ old('email') }}" required autocomplete="email">
             <label for="email">電子郵件</label>
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="password" name="password" placeholder="密碼">
+            <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="密碼" value="{{ old('password') }}">
             <label for="password">密碼</label>
+            @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-floating">
-            <select class="form-select" name="job" id="job">
+            <select class="form-select @error('job') is-invalid @enderror" name="job" id="job">
                 <option value="" selected disabled>職位名稱</option>
                 @foreach($jobs as $job)
                     <option value="{{$job->id}}">{{$job->title}}</option>
                 @endforeach
             </select>
+            @error('job')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">註冊</button>         
     </form>

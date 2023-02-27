@@ -19,19 +19,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TaskController:: class, 'home']);
 
 // 發佈任務
-Route::get('/tasks/create', [TaskController::class, 'create']);
+Route::get('/tasks/create', [TaskController::class, 'create'])->middleware('auth');
 
 // 儲存任務
-Route::post('/tasks', [TaskController::class, 'store']);
+Route::post('/tasks', [TaskController::class, 'store'])->middleware('auth');
 
 // 查看任務
-Route::get('/users/tasks', [TaskController::class, 'check']);
+Route::get('/users/tasks', [TaskController::class, 'check'])->middleware('auth');
 
 // 更新任務狀態
-Route::put('/tasks/{id}', [TaskController::class, 'update']);
+Route::put('/tasks/{id}', [TaskController::class, 'update'])->middleware('auth');
 
 // 註冊會員
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'register'])->middleware('guest');
 
 // 儲存會員
 Route::post('/users', [UserController::class, 'store']);
@@ -40,7 +40,7 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // 登入會員頁面
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 // 登入會員認證
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);

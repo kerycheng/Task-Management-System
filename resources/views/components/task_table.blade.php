@@ -43,7 +43,12 @@
                             </div>
                             <div class="d-flex flex-row align-items-center">
                                 <div class="d-flex flex-column mr-2">
-                                  <div class="profile-image"><img class="rounded-circle" src="https://i.imgur.com/xbxOs06.jpg" width="30"><img class="rounded-circle" src="https://i.imgur.com/KIJewDa.jpg" width="30"><img class="rounded-circle" src="https://i.imgur.com/wwd9uNI.jpg" width="30"></div><span class="date-time">{{ $task->end_time }}</span></div>
+                                    <div class="profile-image">
+                                        <img class="rounded-circle" src="#" width="30">
+                                        {{ $task->executor }}
+                                    </div>
+                                    <span class="date-time">{{ $task->end_time }}</span>
+                                </div>
                             </div>
                         </li>
                     @endforeach
